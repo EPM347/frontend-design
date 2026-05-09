@@ -23,8 +23,11 @@ The conversion funnel. One unified `<Generator />` component handles upload → 
 Redesigns `/pricing` with chunky neo plan cards, feature comparison table, and FAQ accordion.
 
 ### [`07-homepage-generator/`](./07-homepage-generator/)
-Embeds the `<Generator />` from Round 05 directly into the homepage as a `id="try"` section between Hero and Content. Visitors can convert without ever leaving `/`.
+Embeds the `<Generator />` from Round 05 directly into the homepage as a `id="try"` section between Hero and Content.
+
+### [`08-share-cream/`](./08-share-cream/)
+Redesigns `/art/$jobId` (the public share page). Drops the homepage Navbar for a minimal cream brand bar. Replaces "AI Line Art" copy with style-aware copy. Adds optional side-by-side original/result + a stronger conversion footer.
 
 ## Order of application
 
-Apply rounds in numerical order. Round 02 is required for 03/04/05. Round 05 is required for 07. Round 01 is required for 06. Other rounds are independent.
+Apply rounds in numerical order. Round 02 is required for 03/04/05. Round 05 is required for 07 and 08 (style catalog import). Round 01 is required for 06. Other rounds are independent.
