@@ -1,0 +1,27 @@
+--- a/app/components/homepage/integrations.tsx
++++ b/app/components/homepage/integrations.tsx
+@@
+-              <Link to="/best-ai-art-generator" prefetch="viewport">
+-                <Button>Try it free</Button>
+-              </Link>
++              <a href="#try">
++                <Button>Try it free</Button>
++              </a>
+
+
+### NOTE — apply only if your hero has a "Try it" CTA
+
+This is a hint, not a guaranteed-applicable patch. The exact JSX in
+`integrations.tsx` may differ. The intent is:
+
+  Anywhere on the homepage where a CTA reads "Try it free", "Get started",
+  or "Try the generator" and currently navigates to `/best-ai-art-generator`,
+  change the link to `<a href="#try">…</a>` so it scrolls to the embedded
+  HomeGenerator section instead of doing a full route change. Keep buttons
+  that send users to dashboard/pricing/sign-in unchanged.
+
+  CSS to enable smooth scrolling on the homepage (one-line change):
+
+      html { scroll-behavior: smooth; }
+
+  Add this to `app/app.css` if it isn't already there.

@@ -1,0 +1,18 @@
+--- a/app/routes/home.tsx
++++ b/app/routes/home.tsx
+@@ -2,6 +2,7 @@ import { getAuth } from "@clerk/react-router/ssr.server";
+ import { fetchAction, fetchQuery } from "convex/nextjs";
+ import ContentSection from "~/components/homepage/content";
+ import Footer from "~/components/homepage/footer";
++import HomeGenerator from "~/components/homepage/HomeGenerator";
+ import HeroSection from "~/components/homepage/integrations";
+ import Pricing from "~/components/homepage/pricing";
+ import { api } from "../../convex/_generated/api";
+@@ -52,6 +53,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
+   return (
+     <>
+       <HeroSection loaderData={loaderData} />
++      <HomeGenerator />
+       <ContentSection />
+       <Pricing loaderData={loaderData} />
+       <Footer />
