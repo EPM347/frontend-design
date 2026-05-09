@@ -1,0 +1,25 @@
+# Round 07's HomeGenerator embed is now obsolete
+
+Round 07 added an inline `<HomeGenerator />` section between Hero and Content
+on the homepage. With Round 09, the homepage is a marketing-focused funnel
+that sends visitors to /best-ai-art-generator instead of embedding the
+generator directly.
+
+If Round 07 was previously applied, Round 09's `app/routes/home.tsx`
+replacement already drops the `<HomeGenerator />` import and render. No
+manual diff needed — the route file replacement handles it.
+
+The component file itself can stay at:
+
+  app/components/homepage/HomeGenerator.tsx
+
+It's no longer referenced. Delete or keep — either is fine. (Keeping leaves
+the option open to re-embed later if data shows visitors want to try without
+clicking through to /best-ai-art-generator.)
+
+If you want to delete it cleanly:
+
+    rm app/components/homepage/HomeGenerator.tsx
+
+That's the only "diff" — Round 09 is a full route replacement, so all the
+import and render changes are baked in.

@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OneClick·Art — Brand Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream-50: #FBF6EE;
+    --cream-100: #F4E8D8;
+    --cream-200: #E5D8C2;
+    --terracotta-400: #E59A7E;
+    --terracotta-500: #D87C5A;
+    --terracotta-600: #C26849;
+    --sage-300: #B5C9B0;
+    --sage-500: #88A584;
+    --butter-500: #F4C95D;
+    --butter-700: #C99B30;
+    --cocoa-700: #5C4A3D;
+    --cocoa-900: #3A2E26;
+    --basil-500: #6E9760;
+    --tomato-500: #C9523A;
+    --line: rgba(58,46,38,0.12);
+    --line-strong: rgba(58,46,38,0.22);
+  }
+
+  body {
+    font-family: 'DM Sans', -apple-system, system-ui, sans-serif;
+    background: var(--cream-50);
+    color: var(--cocoa-900);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ============ COMMON LAYOUT ============ */
+  .book {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 56px 5% 120px;
+  }
+
+  .section {
+    margin-top: 96px;
+    padding-top: 48px;
+    border-top: 2px solid var(--cocoa-900);
+  }
+  .section:first-of-type { margin-top: 0; padding-top: 0; border-top: 0; }
+
+  .section-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--terracotta-500);
+    -webkit-text-stroke: 0.5px var(--cocoa-900);
+    margin-bottom: 8px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    margin-bottom: 12px;
+  }
+  .section-title em {
+    color: var(--terracotta-500);
+    font-style: italic;
+  }
+  .section-lede {
+    font-size: 17px;
+    color: var(--cocoa-700);
+    max-width: 640px;
+    line-height: 1.6;
+    margin-bottom: 36px;
+  }
+  .section-lede strong {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--cocoa-900);
+  }
+
+  .h-rule {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--cocoa-900);
+    margin: 36px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* ============ COVER ============ */
+  .cover {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 64px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--butter-500) 0%, var(--terracotta-500) 60%, transparent 100%);
+    opacity: 0.12;
+    pointer-events: none;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--sage-500) 0%, var(--basil-500) 60%, transparent 100%);
+    opacity: 0.10;
+    pointer-events: none;
+  }
+  .cover .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--terracotta-500);
+    font-weight: 700;
+    margin-bottom: 28px;
+    background: var(--butter-500);
+    border: 2px solid var(--cocoa-900);
+    padding: 6px 14px;
+    box-shadow: 3px 3px 0 0 var(--cocoa-900);
+    align-self: center;
+    position: relative;
+    z-index: 1;
+  }
+  .cover-title {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(56px, 9vw, 120px);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover-title em {
+    font-style: italic;
+    color: var(--terracotta-500);
+  }
+  .cover-stamp {
+    display: inline-block;
+    background: var(--terracotta-500);
+    color: white;
+    border: 4px solid var(--cocoa-900);
+    padding: 0.04em 0.18em;
+    transform: rotate(-2deg);
+    box-shadow: 8px 8px 0 0 var(--cocoa-900);
+    font-style: normal;
+    margin: 0 0.04em;
+  }
+  .cover-sub {
+    font-size: 18px;
+    color: var(--cocoa-700);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  .meta-pill {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 6px 12px;
+    border: 2px solid var(--cocoa-900);
+    background: white;
+  }
+
+  /* ============ TABLE OF CONTENTS ============ */
+  .toc {
+    margin-top: 48px;
+    padding: 24px 28px;
+    background: white;
+    border: 2.5px solid var(--cocoa-900);
+    box-shadow: 5px 5px 0 0 var(--cocoa-900);
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+  }
+  .toc-title {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--cocoa-700);
+    margin-bottom: 14px;
+  }
+  .toc ol {
+    list-style: none;
+    counter-reset: toc;
+    columns: 2;
+    column-gap: 24px;
+  }
+  .toc li {
+    counter-increment: toc;
+    padding: 6px 0;
+    font-size: 14px;
+    color: var(--cocoa-900);
+    break-inside: avoid;
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .toc li::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--terracotta-500);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ============ COLOR PALETTE ============ */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .swatch {
+    border: 2.5px solid var(--cocoa-900);
+    box-shadow: 4px 4px 0 0 var(--cocoa-900);
+    overflow: hidden;
+    background: white;
+  }
+  .swatch-color {
+    height: 110px;
+    border-bottom: 2.5px solid var(--cocoa-900);
+    position: relative;
+  }
+  .swatch-color .dot {
+    position: absolute;
+    top: 10px; right: 10px;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--cocoa-900);
+    background: white;
+    color: var(--cocoa-900);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .swatch-meta {
+    padding: 12px 14px;
+  }
+  .swatch-name {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--cocoa-900);
+    line-height: 1.1;
+  }
+  .swatch-hex {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--cocoa-700);
+    margin-top: 2px;
+  }
+  .swatch-token {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--terracotta-500);
+    margin-top: 2px;
+  }
+  .swatch-role {
+    font-size: 12px;
+    color: var(--cocoa-700);
+    margin-top: 8px;
+    line-height: 1.45;
+  }
+
+  /* Color usage callouts */
+  .color-rules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .color-rule {
+    background: white;
+    border: 2.5px solid var(--cocoa-900);
+    box-shadow: 3px 3px 0 0 var(--cocoa-900);
+    padding: 18px 20px;
+  }
+  .color-rule-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: var(--butter-500);
+    border: 2px solid var(--cocoa-900);
+    padding: 3px 9px;
+    margin-bottom: 10px;
+  }
+  .color-rule h4 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .color-rule p {
+    font-size: 13px;
+    color: var(--cocoa-700);
+    line-height: 1.55;
+  }
+  .color-rule p strong {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--cocoa-900);
+  }
+
+  /* ============ TYPOGRAPHY ============ */
+  .type-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .type-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: center;
+  }
+  .type-row:last-child { border-bottom: 0; }
+  .type-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--cocoa-700);
+    line-height: 1.5;
+  }
+  .type-meta-name {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--cocoa-900);
+    margin-bottom: 4px;
+  }
+  .type-sample {
+    color: var(--cocoa-900);
+  }
+
+  .display-1 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(40px, 5vw, 60px);
+    line-height: 0.96;
+    letter-spacing: -0.025em;
+  }
+  .display-2 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .display-3 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.1;
+  }
+  .body-large { font-size: 17px; line-height: 1.55; }
+  .body { font-size: 14px; line-height: 1.55; }
+  .body-small { font-weight: 500; font-size: 12px; line-height: 1.5; color: var(--cocoa-700); }
+  .eyebrow {
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--terracotta-500);
+  }
+  .button-style {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+  .mono {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+  }
+
+  .pairing-callouts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .pairing-callout {
+    background: var(--cream-100);
+    border: 2.5px solid var(--cocoa-900);
+    box-shadow: 4px 4px 0 0 var(--cocoa-900);
+    padding: 22px 24px;
+  }
+  .pairing-callout h4 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 14px;
+    line-height: 1;
+  }
+  .pairing-demo {
+    margin-top: 14px;
+    padding: 16px;
+    background: white;
+    border: 2px solid var(--cocoa-900);
+  }
+
+  /* ============ NEO PRIMITIVES ============ */
+  .primitive-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-bottom: 36px;
+  }
+  .primitive {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    background: white;
+    border: 2.5px solid var(--cocoa-900);
+    box-shadow: 5px 5px 0 0 var(--cocoa-900);
+    padding: 28px 32px;
+    align-items: center;
+  }
+  .primitive-info h4 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .primitive-info p {
+    font-size: 14px;
+    color: var(--cocoa-700);
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+  .primitive-info p strong {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--cocoa-900);
+  }
+  .primitive-info code {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    background: var(--cream-100);
+    padding: 10px 12px;
+    border: 1.5px solid var(--cocoa-900);
+    color: var(--cocoa-900);
+    line-height: 1.6;
+    white-space: pre-wrap;
+  }
+  .primitive-demo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    background: var(--cream-50);
+    border: 2px solid var(--cocoa-900);
+    padding: 32px;
+    overflow: visible;
+  }
+
+  /* Demo: chunky neo card */
+  .demo-card {
+    background: white;
+    border: 3px solid var(--cocoa-900);
+    box-shadow: 6px 6px 0 0 var(--cocoa-900);
+    padding: 18px 24px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--cocoa-900);
+  }
+
+  /* Demo: button with press */
+  .demo-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--terracotta-500);
+    color: white;
+    border: 2.5px solid var(--cocoa-900);
+    padding: 12px 22px;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 4px 4px 0 0 var(--cocoa-900);
+    cursor: pointer;
+    transition: all 0.1s;
+  }
+  .demo-button:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 0 var(--cocoa-900);
+  }
+
+  /* Demo: boxed name */
+  .demo-headline {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1;
+    color: var(--cocoa-900);
+  }
+  .demo-headline .boxed-name {
+    display: inline-block;
+    background: var(--terracotta-500);
+    color: white;
+    border: 4px solid var(--cocoa-900);
+    padding: 0.04em 0.18em;
+    transform: rotate(-2deg);
+    box-shadow: 6px 6px 0 0 var(--cocoa-900);
+    font-style: normal;
+    margin: 0 0.06em;
+  }
+  .demo-headline .boxed-num {
+    display: inline-block;
+    background: var(--butter-500);
+    color: var(--cocoa-900);
+    border: 3px solid var(--cocoa-900);
+    box-shadow: 4px 4px 0 0 var(--cocoa-900);
+    padding: 0.04em 0.14em;
+    transform: rotate(-2deg);
+    font-style: normal;
+    margin: 0 0.06em;
+  }
+
+  /* Demo: pill eyebrow */
+  .demo-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--terracotta-500);
+    font-weight: 700;
+    background: var(--butter-500);
+    border: 2px solid var(--cocoa-900);
+    padding: 5px 11px;
+    box-shadow: 3px 3px 0 0 var(--cocoa-900);
+  }
+
+  /* Press demo gif feel */
+  .press-stack { display: flex; gap: 16px; align-items: center; }
+  .press-stack-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--cocoa-700);
+    letter-spacing: 0.06em;
+  }
+
+  /* ============ DO/DON'T VOICE TABLE ============ */
+  .voice-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 2.5px solid var(--cocoa-900);
+    box-shadow: 5px 5px 0 0 var(--cocoa-900);
+    background: white;
+    margin-bottom: 36px;
+  }
+  .voice-header {
+    background: var(--cocoa-900);
+    color: var(--cream-50);
+    padding: 14px 22px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .voice-header.dont {
+    background: var(--cocoa-700);
+  }
+  .voice-cell {
+    padding: 16px 22px;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    line-height: 1.55;
+    background: white;
+  }
+  .voice-cell.dont {
+    background: var(--cream-50);
+    color: var(--cocoa-700);
+    text-decoration: line-through;
+    text-decoration-color: var(--tomato-500);
+    text-decoration-thickness: 1.5px;
+    text-decoration-skip-ink: none;
+  }
+  .voice-cell.do {
+    color: var(--cocoa-900);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  /* ============ PHRASE BANK ============ */
+  .phrase-bank {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .phrase {
+    background: white;
+    border: 2.5px solid var(--cocoa-900);
+    box-shadow: 4px 4px 0 0 var(--cocoa-900);
+    padding: 18px 22px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.15;
+    color: var(--cocoa-900);
+    position: relative;
+  }
+  .phrase::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 14px;
+    font-size: 80px;
+    line-height: 1;
+    color: var(--terracotta-500);
+    -webkit-text-stroke: 1px var(--cocoa-900);
+    z-index: 0;
+    opacity: 0.5;
+  }
+  .phrase span { position: relative; z-index: 1; }
+
+  /* ============ DON'TS GALLERY ============ */
+  .donts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .dont-card {
+    background: white;
+    border: 2.5px solid var(--cocoa-900);
+    box-shadow: 4px 4px 0 0 var(--tomato-500);
+    padding: 22px 24px;
+  }
+  .dont-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--tomato-500);
+    background: white;
+    border: 2px solid var(--tomato-500);
+    padding: 3px 9px;
+    margin-bottom: 10px;
+  }
+  .dont-card h4 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    color: var(--cocoa-900);
+  }
+  .dont-card p {
+    font-size: 13px;
+    color: var(--cocoa-700);
+    line-height: 1.55;
+  }
+
+  /* ============ SHADOW SCALE ============ */
+  .shadow-scale {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .shadow-sample {
+    aspect-ratio: 1;
+    background: white;
+    border: 2.5px solid var(--cocoa-900);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--cocoa-700);
+    line-height: 1.5;
+  }
+  .shadow-sample.s2 { box-shadow: 2px 2px 0 0 var(--cocoa-900); }
+  .shadow-sample.s3 { box-shadow: 3px 3px 0 0 var(--cocoa-900); }
+  .shadow-sample.s4 { box-shadow: 4px 4px 0 0 var(--cocoa-900); }
+  .shadow-sample.s6 { box-shadow: 6px 6px 0 0 var(--cocoa-900); }
+  .shadow-sample.s8 { box-shadow: 8px 8px 0 0 var(--cocoa-900); }
+
+  .shadow-sample strong {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--cocoa-900);
+    margin-bottom: 4px;
+  }
+
+  /* ============ BRAND SOUL CARD ============ */
+  .soul-card {
+    background: white;
+    border: 4px solid var(--cocoa-900);
+    box-shadow: 12px 12px 0 0 var(--terracotta-500);
+    padding: 56px 64px;
+    margin: 0 auto;
+    max-width: 880px;
+    position: relative;
+    overflow: hidden;
+  }
+  .soul-card::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--butter-500) 0%, var(--terracotta-500) 60%, transparent 100%);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+  .soul-card .lead {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(22px, 2.4vw, 30px);
+    line-height: 1.35;
+    color: var(--cocoa-900);
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+  }
+  .soul-card .lead em {
+    color: var(--terracotta-500);
+  }
+  .soul-card .body-text {
+    font-size: 15px;
+    color: var(--cocoa-700);
+    line-height: 1.7;
+    max-width: 580px;
+    position: relative;
+    z-index: 1;
+  }
+  .soul-card .body-text strong {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--cocoa-900);
+  }
+
+  /* ============ FACTS PANEL ============ */
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .fact {
+    background: white;
+    border: 2.5px solid var(--cocoa-900);
+    box-shadow: 4px 4px 0 0 var(--cocoa-900);
+    padding: 18px 22px;
+  }
+  .fact-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--cocoa-700);
+    margin-bottom: 6px;
+  }
+  .fact-value {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.15;
+    color: var(--cocoa-900);
+  }
+  .fact-value.mono {
+    font-family: 'DM Mono', monospace;
+    font-style: normal;
+    font-size: 13px;
+  }
+
+  /* ============ CODE BLOCK ============ */
+  pre.code-block {
+    background: var(--cocoa-900);
+    color: var(--cream-50);
+    border: 2.5px solid var(--cocoa-900);
+    box-shadow: 5px 5px 0 0 var(--terracotta-500);
+    padding: 22px 26px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    line-height: 1.7;
+    overflow-x: auto;
+    margin-bottom: 36px;
+  }
+  pre.code-block .c-key { color: var(--butter-500); }
+  pre.code-block .c-val { color: #B5C9B0; }
+  pre.code-block .c-comment { color: var(--cocoa-700); font-style: italic; }
+
+  /* ============ FOOTER ============ */
+  .book-footer {
+    margin-top: 96px;
+    padding: 36px 0;
+    border-top: 2px solid var(--cocoa-900);
+    text-align: center;
+    font-size: 12px;
+    color: var(--cocoa-700);
+  }
+  .book-footer strong {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--cocoa-900);
+  }
+
+  /* ============ MEDIA ============ */
+  @media (max-width: 768px) {
+    .primitive { grid-template-columns: 1fr; }
+    .voice-table { grid-template-columns: 1fr; }
+    .voice-header { display: none; }
+    .voice-cell::before { content: attr(data-label); display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--cocoa-700); font-weight: 700; margin-bottom: 6px; font-family: 'DM Sans', sans-serif; font-style: normal; text-decoration: none; }
+    .shadow-scale { grid-template-columns: repeat(2, 1fr); }
+    .toc ol { columns: 1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="book">
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- COVER                                                            -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <section class="section cover">
+    <span class="eyebrow">✦ Brand book · v1.0 · 2026.05</span>
+    <h1 class="cover-title">
+      OneClick<span style="color: var(--terracotta-500);">·</span><br>
+      <em>Art</em>
+    </h1>
+    <p class="cover-sub">
+      The friendliest art tool on the internet. Cream paper, brown ink, a small chunky stamp on the title.
+    </p>
+    <div class="cover-meta">
+      <span class="meta-pill">Tap a style. Get art.</span>
+      <span class="meta-pill">No prompts</span>
+      <span class="meta-pill">Photos in. Art out.</span>
+    </div>
+
+    <div class="toc">
+      <div class="toc-title">Table of contents</div>
+      <ol>
+        <li>Brand soul — the anchoring paragraph</li>
+        <li>Color system — palette, tokens, rules</li>
+        <li>Typography — three families</li>
+        <li>Neo primitives — five visual moves</li>
+        <li>Voice & tone — how we sound</li>
+        <li>Phrase bank — exact lines we repeat</li>
+        <li>Section patterns — composition rules</li>
+        <li>Imagery direction — what works</li>
+        <li>Don'ts — things that break the brand</li>
+        <li>Tokens reference — every CSS variable</li>
+        <li>Real product facts</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 01 BRAND SOUL                                                    -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <section class="section">
+    <div class="section-num">01 · Soul</div>
+    <h2 class="section-title">The brand <em>in one paragraph.</em></h2>
+    <p class="section-lede">When in doubt, read this. It anchors everything below.</p>
+
+    <div class="soul-card">
+      <p class="lead">
+        OneClick·Art is the <em>friendliest art tool</em> on the internet. It's warm cream paper, thick brown ink, a small chunky stamp on the title — you'd find it in a thoughtful stationery shop, not a tech expo.
+      </p>
+      <p class="body-text">
+        The voice is direct and unhurried. Hemingway, not Shakespeare. <strong>"Tap a style. Get art."</strong> — short sentences with periods that land. The product does one thing well; the design says so without raising its voice.
+        <br><br>
+        The neo-brutalist accents (chunky borders, hard offset shadows, slightly rotated stamps) keep the warmth from feeling sleepy. They tell visitors: <strong>we know what we're doing, we're confident enough to be playful</strong>. They never dominate — they punctuate.
+        <br><br>
+        <strong>One rule above all others:</strong> if a design choice would feel out of place in a small printmaker's shop run by a person who genuinely loves what they make, it doesn't belong in OneClick·Art.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 02 COLOR                                                         -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <section class="section">
+    <div class="section-num">02 · Color</div>
+    <h2 class="section-title">Five colors, <em>one warm room.</em></h2>
+    <p class="section-lede">
+      <strong>Cream + cocoa + terracotta + butter + sage.</strong> No fifth accent. No black. No gray. The cocoa palette is what gives the brand its warmth — substituting hurts the soul.
+    </p>
+
+    <h3 class="h-rule">Surfaces</h3>
+    <div class="palette-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #FBF6EE;">
+          <span class="dot">A</span>
+        </div>
+        <div class="swatch-meta">
+          <div class="swatch-name">Cream 50</div>
+          <div class="swatch-hex">#FBF6EE</div>
+          <div class="swatch-token">--cream-50</div>
+          <div class="swatch-role">Primary page background. Most surfaces start here.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #F4E8D8;">
+          <span class="dot">B</span>
+        </div>
+        <div class="swatch-meta">
+          <div class="swatch-name">Cream 100</div>
+          <div class="swatch-hex">#F4E8D8</div>
+          <div class="swatch-token">--cream-100</div>
+          <div class="swatch-role">Secondary surface. Cards-on-cards, sticky strips, sidebars.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #E5D8C2;">
+          <span class="dot">C</span>
+        </div>
+        <div class="swatch-meta">
+          <div class="swatch-name">Cream 200</div>
+          <div class="swatch-hex">#E5D8C2</div>
+          <div class="swatch-token">--cream-200</div>
+          <div class="swatch-role">Tertiary. Disabled states, image placeholders. Avoid full pages.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #FFFFFF;">
+          <span class="dot">D</span>
+        </div>
+        <div class="swatch-meta">
+          <div class="swatch-name">White</div>
+          <div class="swatch-hex">#FFFFFF</div>
+          <div class="swatch-token">--background</div>
+          <div class="swatch-role">High-contrast cards on top of cream. Pricing cards, hero cards.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="h-rule">Cocoa — text & borders</h3>
+    <div class="palette-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #3A2E26;">
+          <span class="dot" style="background: var(--cream-50); color: var(--cocoa-900);">★</span>
+        </div>
+        <div class="swatch-meta">
+          <div class="swatch-name">Cocoa 900</div>
+          <div class="swatch-hex">#3A2E26</div>
+          <div class="swatch-token">--cocoa-900</div>
+          <div class="swatch-role"><strong>The workhorse.</strong> All borders. All primary text. All hard shadows. Never substitute black.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #5C4A3D;">
+          <span class="dot" style="background: var(--cream-50);">·</span>
+        </div>
+        <div class="swatch-meta">
+          <div class="swatch-name">Cocoa 700</div>
+          <div class="swatch-hex">#5C4A3D</div>
+          <div class="swatch-token">--cocoa-700</div>
+          <div class="swatch-role">Muted text, eyebrow caps, secondary copy. Use instead of gray.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="h-rule">Accents</h3>
+    <div class="palette-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #D87C5A;">
+          <span class="dot">★</span>
+        </div>
+        <div class="swatch-meta">
+          <div class="swatch-name">Terracotta 500</div>
+          <div class="swatch-hex">#D87C5A</div>
+          <div class="swatch-token">--terracotta-500</div>
+          <div class="swatch-role"><strong>THE accent.</strong> Primary CTAs. The one italic word in a hero headline. Active states. Use rarely.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #F4C95D;">
+          <span class="dot" style="background: var(--cocoa-900); color: var(--cream-50);">+</span>
+        </div>
+        <div class="swatch-meta">
+          <div class="swatch-name">Butter 500</div>
+          <div class="swatch-hex">#F4C95D</div>
+          <div class="swatch-token">--butter-500</div>
+          <div class="swatch-role">Pill eyebrows, "free" callouts, boxed numbers. Always paired with cocoa border + offset shadow.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #88A584;">
+          <span class="dot">✓</span>
+        </div>
+        <div class="swatch-meta">
+          <div class="swatch-name">Sage 500</div>
+          <div class="swatch-hex">#88A584</div>
+          <div class="swatch-token">--sage-500</div>
+          <div class="swatch-role">Success ✓ marks. Status pills ("Ready"). Never used as a CTA color.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #C9523A;">
+          <span class="dot">!</span>
+        </div>
+        <div class="swatch-meta">
+          <div class="swatch-name">Tomato 500</div>
+          <div class="swatch-hex">#C9523A</div>
+          <div class="swatch-token">--tomato-500</div>
+          <div class="swatch-role"><strong>Errors only.</strong> Failed jobs, account danger zones. Never marketing.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="h-rule">Usage rules</h3>
+    <div class="color-rules">
+      <div class="color-rule">
+        <span class="color-rule-tag">Cream</span>
+        <h4>Cream is the canvas.</h4>
+        <p>Pages start on <strong>cream-50 or white</strong>. <strong>Cream-100</strong> is for inset surfaces (sidebars, sticky strips). Avoid full-page cream-200 — it reads as washed-out paper.</p>
+      </div>
+      <div class="color-rule">
+        <span class="color-rule-tag">Cocoa</span>
+        <h4>Cocoa for everything that draws the eye.</h4>
+        <p>All borders are <strong>cocoa-900</strong>. All body text is cocoa-900. All hard shadows are cocoa-900. The cocoa palette gives the brand its warmth — never substitute black.</p>
+      </div>
+      <div class="color-rule">
+        <span class="color-rule-tag">Terracotta</span>
+        <h4>Terracotta is rare.</h4>
+        <p>Marks <strong>the</strong> thing on a screen the user should do, or the <strong>one word</strong> in a headline that carries the meaning. If everything is highlighted, nothing is.</p>
+      </div>
+      <div class="color-rule">
+        <span class="color-rule-tag">Butter</span>
+        <h4>Butter is the friendly accent.</h4>
+        <p>Pill eyebrows, boxed numbers, reassurance callouts. <strong>Always</strong> paired with a cocoa border + small offset shadow. <strong>Never</strong> used as a CTA color — that's terracotta's job.</p>
+      </div>
+      <div class="color-rule">
+        <span class="color-rule-tag">Sage</span>
+        <h4>Sage is the tick mark.</h4>
+        <p>Feature lists use sage for the ✓. Status pills use it for "Ready". Never use sage for a CTA — it reads as <em>"this isn't the action."</em></p>
+      </div>
+      <div class="color-rule">
+        <span class="color-rule-tag">Tomato</span>
+        <h4>Tomato is forbidden in marketing.</h4>
+        <p>It belongs only in: <strong>error states</strong>, <strong>danger-zone account actions</strong>, <strong>failed-job indicators</strong>. Never in pricing, never in CTAs, never in headlines.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 03 TYPOGRAPHY                                                    -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <section class="section">
+    <div class="section-num">03 · Typography</div>
+    <h2 class="section-title">Three families, <em>each with one job.</em></h2>
+    <p class="section-lede">
+      <strong>Fraunces</strong> for display + decoration. <strong>DM Sans</strong> for body. <strong>DM Mono</strong> for numbers when the number is the protagonist.
+    </p>
+
+    <h3 class="h-rule">Type specimens</h3>
+    <div class="type-grid">
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-name">Display 1</div>
+          Fraunces · italic 500<br>
+          ~60 / 40 · -0.025em<br>
+          line-height 0.96
+        </div>
+        <div class="type-sample display-1">Tap a style. Get <em style="color:var(--terracotta-500);">art.</em></div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-name">Display 2</div>
+          Fraunces · italic 500<br>
+          ~36 · -0.02em<br>
+          line-height 1
+        </div>
+        <div class="type-sample display-2">Pick a plan. <em style="color:var(--terracotta-500);">Start creating.</em></div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-name">Display 3</div>
+          Fraunces · italic 500<br>
+          ~24 · line-height 1.1
+        </div>
+        <div class="type-sample display-3">Studio Ghibli</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-name">Body Large</div>
+          DM Sans · 400<br>
+          17 · line-height 1.55
+        </div>
+        <div class="type-sample body-large">No prompts, no typing, no learning curve. Upload a photo, pick the look you want, download what you love.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-name">Body</div>
+          DM Sans · 400<br>
+          14 · line-height 1.55
+        </div>
+        <div class="type-sample body">Choose a look from the grid—no prompt box, no jargon. Upload once, tap the style you want, and download when it's ready.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-name">Body Small</div>
+          DM Sans · 500<br>
+          12 · cocoa-700
+        </div>
+        <div class="type-sample body-small">PNG · JPG · WEBP — up to 15MB. Free to try; no prompt writing.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-name">Eyebrow</div>
+          DM Sans · 700<br>
+          11 · 0.22em UPPERCASE<br>
+          terracotta-500
+        </div>
+        <div class="type-sample eyebrow">✦ FREE TRIAL · NO CARD</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-name">Button</div>
+          DM Sans · 700<br>
+          14 · 0.02em
+        </div>
+        <div class="type-sample button-style">Try Watercolor</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-name">Mono</div>
+          DM Mono · 400/500<br>
+          11–13
+        </div>
+        <div class="type-sample mono">2.3MB · 1024 × 1024 · $9.99/mo</div>
+      </div>
+    </div>
+
+    <h3 class="h-rule">Pairing rules</h3>
+    <div class="pairing-callouts">
+      <div class="pairing-callout">
+        <h4>One italic accent word.</h4>
+        <p style="font-size: 13px; color: var(--cocoa-700);">A headline always has a single italic terracotta word — never the whole headline. The accent is the meaning anchor.</p>
+        <div class="pairing-demo">
+          <div class="display-3">Make some <em style="color:var(--terracotta-500); font-style: italic;">art.</em></div>
+        </div>
+      </div>
+      <div class="pairing-callout">
+        <h4>Numbers in mono.</h4>
+        <p style="font-size: 13px; color: var(--cocoa-700);">When the number IS the protagonist (count, file size, time, price digit), it's mono. Body around it is sans.</p>
+        <div class="pairing-demo">
+          <div class="body"><strong style="font-family:'Fraunces';font-style:italic;">$</strong><span class="mono" style="font-size:32px;color:var(--cocoa-900);font-weight:600;">9.99</span> <span class="body-small">/ mo · billed monthly</span></div>
+        </div>
+      </div>
+      <div class="pairing-callout">
+        <h4>Italic = Fraunces only.</h4>
+        <p style="font-size: 13px; color: var(--cocoa-700);">Don't use DM Sans italic. Italic is Fraunces's job. If a body word needs emphasis, use <strong>strong</strong> styled as Fraunces italic — never DM Sans italic.</p>
+        <div class="pairing-demo">
+          <div class="body">You're <strong style="font-family:'Fraunces';font-style:italic;font-weight:500;color:var(--cocoa-900);">already subscribed</strong>. Manage your plan from Settings.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 04 NEO PRIMITIVES                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <section class="section">
+    <div class="section-num">04 · Neo Primitives</div>
+    <h2 class="section-title">Five small <em>visual moves.</em></h2>
+    <p class="section-lede">
+      The neo-brutalist accents that punctuate the warmth. Use sparingly — they're punctuation, not paragraphs.
+    </p>
+
+    <div class="primitive-grid">
+      <!-- Primitive 1: chunky border + shadow -->
+      <div class="primitive">
+        <div class="primitive-info">
+          <h4>1. Chunky border + hard shadow</h4>
+          <p><strong>Always 2.5–4px border, never 1px. Always hard offset shadow, never blurred.</strong> The default for any "card" surface. Match the shadow size to the focal weight.</p>
+          <code>border: 3px solid var(--cocoa-900);
+box-shadow: 6px 6px 0 0 var(--cocoa-900);
+/* never with blur or spread */</code>
+        </div>
+        <div class="primitive-demo">
+          <div class="demo-card">A card surface.</div>
+        </div>
+      </div>
+
+      <!-- Primitive 2: Press-down active -->
+      <div class="primitive">
+        <div class="primitive-info">
+          <h4>2. Press-down active state</h4>
+          <p>Buttons get a <strong>physical press</strong>: shadow goes to <code style="display:inline;padding:2px 6px;background:var(--cream-100);font-size:11px;">0 0</code>, the element shifts by exactly the shadow's offset. Without this, buttons feel dead.</p>
+          <code>.btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 0 var(--cocoa-900);
+}</code>
+        </div>
+        <div class="primitive-demo">
+          <div class="press-stack">
+            <div>
+              <button class="demo-button">Try Watercolor</button>
+              <div class="press-stack-label" style="margin-top:8px;">CLICK ME</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Primitive 3: Boxed name (terracotta) -->
+      <div class="primitive">
+        <div class="primitive-info">
+          <h4>3. Boxed word — terracotta + rotation</h4>
+          <p>The signature treatment. Wraps <strong>one word</strong> in a rotating, terracotta-stamped box. <strong>Rule of one</strong> — never two boxed words in the same composition.</p>
+          <code>background: var(--terracotta-500);
+border: 4px solid var(--cocoa-900);
+box-shadow: 6px 6px 0 0 var(--cocoa-900);
+transform: rotate(-2deg);
+padding: 0.04em 0.18em;</code>
+        </div>
+        <div class="primitive-demo">
+          <div class="demo-headline">
+            Make your <span class="boxed-name">first</span> piece.
+          </div>
+        </div>
+      </div>
+
+      <!-- Primitive 4: Boxed number (butter) -->
+      <div class="primitive">
+        <div class="primitive-info">
+          <h4>4. Boxed number — butter + rotation</h4>
+          <p>Same treatment, butter background. For <strong>numbers that are the protagonist</strong>: counts, prices, days-in-a-row. Same rule of one.</p>
+          <code>background: var(--butter-500);
+border: 3px solid var(--cocoa-900);
+box-shadow: 4px 4px 0 0 var(--cocoa-900);
+transform: rotate(-2deg);</code>
+        </div>
+        <div class="primitive-demo">
+          <div class="demo-headline">
+            Your gallery — <span class="boxed-num">47</span> pieces
+          </div>
+        </div>
+      </div>
+
+      <!-- Primitive 5: Pill eyebrow -->
+      <div class="primitive">
+        <div class="primitive-info">
+          <h4>5. Pill eyebrow with shadow</h4>
+          <p>The above-headline label. Compresses a value prop into 4–6 words. <strong>Always butter background, terracotta text, cocoa border + offset shadow.</strong></p>
+          <code>background: var(--butter-500);
+color: var(--terracotta-500);
+border: 2px solid var(--cocoa-900);
+box-shadow: 3px 3px 0 0 var(--cocoa-900);
+font-size: 11px;
+letter-spacing: 0.22em;</code>
+        </div>
+        <div class="primitive-demo">
+          <div style="text-align:center;">
+            <span class="demo-pill">✦ Free trial · no card</span>
+            <div class="display-3" style="margin-top:14px;">
+              Tap a style. <em style="color:var(--terracotta-500);font-style:italic;">Get art.</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="h-rule">Shadow scale</h3>
+    <p class="section-lede" style="margin-bottom: 24px;">Match the shadow size to focal weight. <strong>2px</strong> is whisper, <strong>8px</strong> is shout.</p>
+    <div class="shadow-scale">
+      <div class="shadow-sample s2">
+        <div>
+          <strong>2px</strong>
+          Secondary buttons<br>Small chips
+        </div>
+      </div>
+      <div class="shadow-sample s3">
+        <div>
+          <strong>3px</strong>
+          Primary chips<br>Sticky cards
+        </div>
+      </div>
+      <div class="shadow-sample s4">
+        <div>
+          <strong>4px</strong>
+          Content cards<br>Plan cards
+        </div>
+      </div>
+      <div class="shadow-sample s6">
+        <div>
+          <strong>6px</strong>
+          Sticky CTAs<br>Focal cards
+        </div>
+      </div>
+      <div class="shadow-sample s8">
+        <div>
+          <strong>8px</strong>
+          Hero focal<br>Plan hero
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 05 VOICE                                                         -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <section class="section">
+    <div class="section-num">05 · Voice</div>
+    <h2 class="section-title">Direct. <em>Never corporate.</em></h2>
+    <p class="section-lede">
+      Hemingway, not Shakespeare. Two short sentences beat one long one. Warm, not cute. Confident without flexing. <strong>The product hides AI; don't undo that with copy.</strong>
+    </p>
+
+    <h3 class="h-rule">The do/don't table</h3>
+    <div class="voice-table">
+      <div class="voice-header dont">Don't say</div>
+      <div class="voice-header">Do say</div>
+
+      <div class="voice-cell dont" data-label="Don't say">Unleash your creativity</div>
+      <div class="voice-cell do" data-label="Do say">Tap a style. Get art.</div>
+
+      <div class="voice-cell dont" data-label="Don't say">AI-powered art generation</div>
+      <div class="voice-cell do" data-label="Do say">Photo-to-art tool</div>
+
+      <div class="voice-cell dont" data-label="Don't say">Click here to upload</div>
+      <div class="voice-cell do" data-label="Do say">Upload a photo</div>
+
+      <div class="voice-cell dont" data-label="Don't say">Sign up to unlock</div>
+      <div class="voice-cell do" data-label="Do say">Sign up free → Generate Watercolor</div>
+
+      <div class="voice-cell dont" data-label="Don't say">Cutting-edge models</div>
+      <div class="voice-cell do" data-label="Do say">(Don't mention the models. The user doesn't care.)</div>
+
+      <div class="voice-cell dont" data-label="Don't say">Premium · Enterprise</div>
+      <div class="voice-cell do" data-label="Do say">Pro Pack · Artisan Pro</div>
+
+      <div class="voice-cell dont" data-label="Don't say">Quota exceeded</div>
+      <div class="voice-cell do" data-label="Do say">Out of free generations · upgrade</div>
+
+      <div class="voice-cell dont" data-label="Don't say">An error occurred</div>
+      <div class="voice-cell do" data-label="Do say">Something went sideways. Try Generate again.</div>
+
+      <div class="voice-cell dont" data-label="Don't say">Subscribe now</div>
+      <div class="voice-cell do" data-label="Do say">Try Starter — $6.99 / Go Pro — $9.99</div>
+
+      <div class="voice-cell dont" data-label="Don't say">Loading...</div>
+      <div class="voice-cell do" data-label="Do say">Hold on a sec… / Cooking… / Picking colors…</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 06 PHRASE BANK                                                   -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <section class="section">
+    <div class="section-num">06 · Phrase Bank</div>
+    <h2 class="section-title">Lines we <em>repeat exactly.</em></h2>
+    <p class="section-lede">
+      These six phrases anchor every surface. When you need to write copy for OneClick·Art and don't know where to start, start with one of these.
+    </p>
+
+    <div class="phrase-bank">
+      <div class="phrase"><span>Tap a style. Get art.</span></div>
+      <div class="phrase"><span>Photos in. Art out. No typing.</span></div>
+      <div class="phrase"><span>No prompts, no typing, no learning curve.</span></div>
+      <div class="phrase"><span>Three taps. One photo. Done.</span></div>
+      <div class="phrase"><span>Free to try. No card.</span></div>
+      <div class="phrase"><span>Pay if you love it.</span></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 07 IMAGERY                                                       -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <section class="section">
+    <div class="section-num">07 · Imagery</div>
+    <h2 class="section-title">Real photos beat <em>AI fakes.</em></h2>
+    <p class="section-lede">
+      OneClick·Art is built around real human photos. Marketing should feature <strong>real before-after pairs</strong> with rights-cleared subjects. Square crops dominate.
+    </p>
+
+    <div class="color-rules">
+      <div class="color-rule">
+        <span class="color-rule-tag" style="background: var(--sage-500); color: white;">Yes</span>
+        <h4>Warm, human, slightly imperfect.</h4>
+        <p>A real face. A pet on a couch. A wedding shot. <strong>Subtle film grain or paper texture</strong> in backgrounds is welcome — feels like a printmaker's shop.</p>
+      </div>
+      <div class="color-rule">
+        <span class="color-rule-tag" style="background: var(--tomato-500); color: white;">No</span>
+        <h4>Glossy stock photography.</h4>
+        <p>The woman pointing at a laptop. The diverse-handshake-over-conference-table shot. Too corporate.</p>
+      </div>
+      <div class="color-rule">
+        <span class="color-rule-tag" style="background: var(--tomato-500); color: white;">No</span>
+        <h4>Generic "AI art" tropes.</h4>
+        <p><strong>Glowing particles, neon orbs, abstract light rays, circuit-board "digital" textures.</strong> The product is photo→art, not abstract generation. These tropes undermine the whole pitch.</p>
+      </div>
+      <div class="color-rule">
+        <span class="color-rule-tag" style="background: var(--tomato-500); color: white;">No</span>
+        <h4>Tech imagery.</h4>
+        <p>Robot hands. Hands on glowing keyboards. Brain-with-circuits. <strong>The product hides AI; don't undo that with imagery.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 08 DON'TS                                                        -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <section class="section">
+    <div class="section-num">08 · Don'ts</div>
+    <h2 class="section-title">Things that break the brand <em>instantly.</em></h2>
+    <p class="section-lede">If you find any of these in production, fix them immediately. Each undermines a specific brand value.</p>
+
+    <div class="donts-grid">
+      <div class="dont-card">
+        <span class="dont-tag">Don't · 01</span>
+        <h4>Add a fifth color.</h4>
+        <p>Cream + cocoa + terracotta + butter + sage. That's the system. Want a new mood? Lean on existing colors at different weights.</p>
+      </div>
+      <div class="dont-card">
+        <span class="dont-tag">Don't · 02</span>
+        <h4>Use Inter, Roboto, or generic sans.</h4>
+        <p>They're crisp but cold. DM Sans has personality. Don't add a fourth typeface; three is enough.</p>
+      </div>
+      <div class="dont-card">
+        <span class="dont-tag">Don't · 03</span>
+        <h4>Blur the shadows.</h4>
+        <p>Hard offset only. <code style="display:inline;padding:2px 6px;background:var(--cream-100);font-family:'DM Mono';font-size:11px;">box-shadow: 4px 4px 0 0</code> — note the <strong>0 0</strong>. No blur, no spread.</p>
+      </div>
+      <div class="dont-card">
+        <span class="dont-tag">Don't · 04</span>
+        <h4>Say "AI" in marketing headlines.</h4>
+        <p>The product hides AI. Headlines say what visitors get, not what's under the hood. (SEO surfaces excepted.)</p>
+      </div>
+      <div class="dont-card">
+        <span class="dont-tag">Don't · 05</span>
+        <h4>Use generic loading copy.</h4>
+        <p><strong>"Cooking..."</strong> beats "Loading..." Every time. The voice extends to the moments between actions.</p>
+      </div>
+      <div class="dont-card">
+        <span class="dont-tag">Don't · 06</span>
+        <h4>Two boxed-words in one composition.</h4>
+        <p>Rule of one. The treatment loses meaning if it's used decoratively. One stamp per page.</p>
+      </div>
+      <div class="dont-card">
+        <span class="dont-tag">Don't · 07</span>
+        <h4>Market features users can't see.</h4>
+        <p>"Powered by SDXL 1.0 + LoRA fine-tunes" is not for the homepage. Show what they make, not how.</p>
+      </div>
+      <div class="dont-card">
+        <span class="dont-tag">Don't · 08</span>
+        <h4>Use pure black or gray.</h4>
+        <p>Substitute <strong>cocoa-900</strong> (#3A2E26) for black, <strong>cocoa-700</strong> (#5C4A3D) for gray. The cocoa palette is what gives the brand its warmth.</p>
+      </div>
+      <div class="dont-card">
+        <span class="dont-tag">Don't · 09</span>
+        <h4>Break the press-down state.</h4>
+        <p>It's the difference between feeling alive and feeling dead. Every CTA needs the active translate + shadow-to-zero.</p>
+      </div>
+      <div class="dont-card">
+        <span class="dont-tag">Don't · 10</span>
+        <h4>Optimize for designers.</h4>
+        <p>Optimize for someone who just wants their pet's portrait. If a beautiful design choice would confuse that person, the choice is wrong.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 09 TOKENS REFERENCE                                              -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <section class="section">
+    <div class="section-num">09 · Tokens</div>
+    <h2 class="section-title">Every CSS variable, <em>in one place.</em></h2>
+    <p class="section-lede">
+      All tokens live in <code style="display:inline;padding:2px 6px;background:var(--cream-100);font-family:'DM Mono';font-size:13px;">app/app.css</code> under <code style="display:inline;padding:2px 6px;background:var(--cream-100);font-family:'DM Mono';font-size:13px;">.theme-cream</code>. Wrap any subtree in <code style="display:inline;padding:2px 6px;background:var(--cream-100);font-family:'DM Mono';font-size:13px;">&lt;div className="theme-cream"&gt;</code> and every Tailwind semantic token flips to the cream palette automatically.
+    </p>
+
+<pre class="code-block"><span class="c-comment">/* All tokens scoped to .theme-cream — wrap any subtree to flip */</span>
+<span class="c-key">.theme-cream</span> {
+  <span class="c-comment">/* Cream surfaces */</span>
+  <span class="c-key">--cream-50</span>:        <span class="c-val">#FBF6EE</span>;
+  <span class="c-key">--cream-100</span>:       <span class="c-val">#F4E8D8</span>;
+  <span class="c-key">--cream-200</span>:       <span class="c-val">#E5D8C2</span>;
+
+  <span class="c-comment">/* Cocoa text + borders */</span>
+  <span class="c-key">--cocoa-700</span>:       <span class="c-val">#5C4A3D</span>;
+  <span class="c-key">--cocoa-900</span>:       <span class="c-val">#3A2E26</span>;
+
+  <span class="c-comment">/* Accents */</span>
+  <span class="c-key">--terracotta-400</span>:  <span class="c-val">#E59A7E</span>;
+  <span class="c-key">--terracotta-500</span>:  <span class="c-val">#D87C5A</span>;
+  <span class="c-key">--terracotta-600</span>:  <span class="c-val">#C26849</span>;
+  <span class="c-key">--butter-500</span>:      <span class="c-val">#F4C95D</span>;
+  <span class="c-key">--butter-700</span>:      <span class="c-val">#C99B30</span>;
+  <span class="c-key">--sage-300</span>:        <span class="c-val">#B5C9B0</span>;
+  <span class="c-key">--sage-500</span>:        <span class="c-val">#88A584</span>;
+  <span class="c-key">--basil-500</span>:       <span class="c-val">#6E9760</span>;
+  <span class="c-key">--tomato-500</span>:      <span class="c-val">#C9523A</span>;
+
+  <span class="c-comment">/* Standard shadcn token overrides — auto-flip components */</span>
+  <span class="c-key">--background</span>:       <span class="c-val">#FFFFFF</span>;
+  <span class="c-key">--foreground</span>:       var(<span class="c-key">--cocoa-900</span>);
+  <span class="c-key">--card</span>:             <span class="c-val">#FFFFFF</span>;
+  <span class="c-key">--card-foreground</span>:  var(<span class="c-key">--cocoa-900</span>);
+  <span class="c-key">--muted</span>:            var(<span class="c-key">--cream-100</span>);
+  <span class="c-key">--muted-foreground</span>: var(<span class="c-key">--cocoa-700</span>);
+  <span class="c-key">--border</span>:           var(<span class="c-key">--cocoa-900</span>);
+  <span class="c-key">--primary</span>:          var(<span class="c-key">--cocoa-900</span>);
+  <span class="c-key">--primary-foreground</span>: var(<span class="c-key">--cream-50</span>);
+  <span class="c-key">--accent</span>:           var(<span class="c-key">--terracotta-500</span>);
+  <span class="c-key">--accent-foreground</span>:  <span class="c-val">#FFFFFF</span>;
+  <span class="c-key">--destructive</span>:      var(<span class="c-key">--tomato-500</span>);
+
+  <span class="c-comment">/* Sidebar tokens (used inside the dashboard) */</span>
+  <span class="c-key">--sidebar</span>:                    var(<span class="c-key">--cream-100</span>);
+  <span class="c-key">--sidebar-foreground</span>:         var(<span class="c-key">--cocoa-900</span>);
+  <span class="c-key">--sidebar-border</span>:             var(<span class="c-key">--cocoa-900</span>);
+  <span class="c-key">--sidebar-primary</span>:            var(<span class="c-key">--terracotta-500</span>);
+  <span class="c-key">--sidebar-primary-foreground</span>:  <span class="c-val">#FFFFFF</span>;
+  <span class="c-key">--sidebar-accent</span>:             var(<span class="c-key">--cream-200</span>);
+
+  <span class="c-comment">/* Typography */</span>
+  <span class="c-key">--font-display</span>: <span class="c-val">'Fraunces', serif</span>;
+  <span class="c-key">--font-sans</span>:    <span class="c-val">'DM Sans', -apple-system, system-ui, sans-serif</span>;
+  <span class="c-key">--font-mono</span>:    <span class="c-val">'DM Mono', ui-monospace, monospace</span>;
+}</pre>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 10 PRODUCT FACTS                                                 -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <section class="section">
+    <div class="section-num">10 · Product facts</div>
+    <h2 class="section-title">Real numbers <em>(don't invent).</em></h2>
+    <p class="section-lede">
+      When writing copy or designing surfaces, use these facts exactly. They match what's live on oneclickart.com today.
+    </p>
+
+    <div class="facts">
+      <div class="fact">
+        <div class="fact-label">Pricing tier 1</div>
+        <div class="fact-value">Starter Pack</div>
+        <div class="fact-value mono">$6.99 / mo</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Pricing tier 2 · most chosen</div>
+        <div class="fact-value">Pro Pack</div>
+        <div class="fact-value mono">$9.99 / mo</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Pricing tier 3</div>
+        <div class="fact-value">Artisan Pro</div>
+        <div class="fact-value mono">$19.99 / mo</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Free tier</div>
+        <div class="fact-value">5 / day</div>
+        <div class="fact-value mono">no card</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Number of styles</div>
+        <div class="fact-value">12+</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Email</div>
+        <div class="fact-value mono" style="font-size: 14px;">hello@oneclickart.com</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Address</div>
+        <div class="fact-value mono" style="font-size: 13px; line-height: 1.55;">30 N Gould St #53707<br>Sheridan, WY 82801</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Domain</div>
+        <div class="fact-value mono" style="font-size: 14px;">oneclickart.com</div>
+      </div>
+    </div>
+
+    <h3 class="h-rule">Style names</h3>
+    <p style="margin-bottom: 18px; color: var(--cocoa-700); font-size: 14px; line-height: 1.6;">
+      The 9 styles featured on the homepage today, in order. The full library is "12+" — three are reserved for future drops.
+    </p>
+    <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;">
+      <div style="padding: 14px 18px; background: white; border: 2px solid var(--cocoa-900); box-shadow: 3px 3px 0 0 var(--cocoa-900); font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 17px; color: var(--cocoa-900);">One Line Art</div>
+      <div style="padding: 14px 18px; background: white; border: 2px solid var(--cocoa-900); box-shadow: 3px 3px 0 0 var(--cocoa-900); font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 17px; color: var(--cocoa-900);">Studio Ghibli</div>
+      <div style="padding: 14px 18px; background: white; border: 2px solid var(--cocoa-900); box-shadow: 3px 3px 0 0 var(--cocoa-900); font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 17px; color: var(--cocoa-900);">Realistic Sketch</div>
+      <div style="padding: 14px 18px; background: white; border: 2px solid var(--cocoa-900); box-shadow: 3px 3px 0 0 var(--cocoa-900); font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 17px; color: var(--cocoa-900);">Pet Portrait</div>
+      <div style="padding: 14px 18px; background: white; border: 2px solid var(--cocoa-900); box-shadow: 3px 3px 0 0 var(--cocoa-900); font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 17px; color: var(--cocoa-900);">3D Cartoon</div>
+      <div style="padding: 14px 18px; background: white; border: 2px solid var(--cocoa-900); box-shadow: 3px 3px 0 0 var(--cocoa-900); font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 17px; color: var(--cocoa-900);">Pop Art</div>
+      <div style="padding: 14px 18px; background: white; border: 2px solid var(--cocoa-900); box-shadow: 3px 3px 0 0 var(--cocoa-900); font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 17px; color: var(--cocoa-900);">Oil Painting</div>
+      <div style="padding: 14px 18px; background: white; border: 2px solid var(--cocoa-900); box-shadow: 3px 3px 0 0 var(--cocoa-900); font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 17px; color: var(--cocoa-900);">Silhouette</div>
+      <div style="padding: 14px 18px; background: white; border: 2px solid var(--cocoa-900); box-shadow: 3px 3px 0 0 var(--cocoa-900); font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 17px; color: var(--cocoa-900);">Watercolor</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- FOOTER                                                            -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <footer class="book-footer">
+    <strong>OneClick·Art Brand Book</strong> · v1.0 · 2026.05<br>
+    Pairs with <code style="font-family:'DM Mono';font-size:11px;background:var(--cream-100);padding:2px 6px;">_brand/BRAND_GUIDE.md</code> + <code style="font-family:'DM Mono';font-size:11px;background:var(--cream-100);padding:2px 6px;">_brand/DESIGN_PROMPT.md</code><br>
+    <em style="font-style:italic; font-family:'Fraunces';">Photos in. Art out. No typing.</em>
+  </footer>
+
+</div>
+
+</body>
+</html>
