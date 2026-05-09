@@ -1,0 +1,43 @@
+================================================================================
+PATCH 1: app/root.tsx
+================================================================================
+Adds Fraunces + DM Sans to the deferred font loader. The fonts are loaded
+async after first paint (matching the existing Inter pattern), so cream-themed
+pages get italic Fraunces headlines / DM Sans body, and navy pages keep Inter.
+
+Both navy and cream pages will fetch all three font families in this approach
+(adds ~2 fonts to the deferred load, ~30KB compressed). If you want to avoid
+loading Fraunces+DM Sans on navy-only pageviews, see "Optional optimization"
+at the bottom — but the simpler unified loader is recommended for v1.
+
+LOCATION: line 320 (inside the DeferredAnalytics useEffect, in the try block)
+================================================================================
+
+----- FIND (line 320) ---------------------------------------------------------
+      const fontUrl = 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..600&display=swap';
+
+----- REPLACE WITH ------------------------------------------------------------
+      // Marketing routes use Fraunces (italic display) + DM Sans (body);
+      // app routes use Inter. We load all three in one stylesheet request to
+      // keep it to a single font fetch with display=swap.
+      const fontUrl = 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..600&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=DM+Sans:wght@400..700&display=swap';
+
+================================================================================
+That's the entire root.tsx change. One line. The deferred loader, the font
+swap technique, the cleanup logic — everything else stays exactly as it was.
+================================================================================
+
+
+OPTIONAL OPTIMIZATION (skip on first ship):
+If you want to avoid loading Fraunces+DM Sans on app pageviews (savings ~25KB
+gzipped), branch the font URL on the route:
+
+  // Detect cream-themed routes by the wrapper (or check pathname)
+  const isMarketingRoute = ['/', '/pricing', '/faq', '/terms', '/privacy']
+    .includes(window.location.pathname);
+  const fontUrl = isMarketingRoute
+    ? 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=DM+Sans:wght@400..700&display=swap'
+    : 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..600&display=swap';
+
+But this means navigating from / → /app/upload triggers a second font load.
+Generally not worth the complexity. Ship the unified loader first.
