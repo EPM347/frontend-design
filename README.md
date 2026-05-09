@@ -16,4 +16,11 @@ Redesigns the `/dashboard/creations` page. Inline peek drawer replaces the modal
 ### [`04-settings-cream/`](./04-settings-cream/)
 Redesigns the `/dashboard/settings` page. Chunky chip tabs, hero plan card, billing card, 4 usage meters with bars, 3-up plan compare, plus the four secondary tabs.
 
-Apply rounds in order — round 03 depends on round 02's `app.css` extensions, round 04 too.
+## Order of application
+
+Apply rounds in numerical order. Round 03 and Round 04 both depend on Round 02's `app.css` extensions and shared chrome components (sidebar, topbar, page header). Round 03 and Round 04 are independent of each other and can be applied in either order.
+
+Each round folder contains:
+- `README.md` — file-by-file change summary, validation checklist, and notes on what to wire post-apply
+- `app/...` — drop-in files (full replacements or new files)
+- `diffs/...` — small surgical patches against existing files (where a full replacement would be overkill)
