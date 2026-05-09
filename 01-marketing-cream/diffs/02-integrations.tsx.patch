@@ -1,0 +1,71 @@
+================================================================================
+PATCH 2: app/components/homepage/integrations.tsx
+================================================================================
+Two surgical edits to the hero. Both are ADDITIVE — keep the existing
+className strings; add cream-only classes that no-op outside the wrapper.
+
+  EDIT A: Replace the inline radial-gradient with CSS-variable references
+          so cream's --hero-glow-* tokens override the orange/navy/pink.
+  EDIT B: Add `boxed-word` class to the "without writing prompts" span.
+          Inside .theme-cream this becomes a chunky terracotta box with
+          a -2° rotation. Outside (which doesn't apply for this component
+          since it's marketing-only), nothing changes.
+
+LOCATION: lines 47–61
+================================================================================
+
+
+----- FIND (lines 47-51) ------------------------------------------------------
+    <section
+      id="hero"
+      className="relative overflow-hidden bg-background"
+    >
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,rgba(252,103,54,0.12),transparent_55%),radial-gradient(ellipse_80%_50%_at_100%_50%,rgba(12,45,87,0.06),transparent_50%),radial-gradient(ellipse_60%_40%_at_0%_80%,rgba(255,176,176,0.14),transparent_45%)]"
+        aria-hidden
+      />
+
+----- REPLACE WITH ------------------------------------------------------------
+    <section
+      id="hero"
+      className="relative overflow-hidden bg-background"
+    >
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: `
+            radial-gradient(ellipse 120% 80% at 50% -20%, var(--hero-glow-1), transparent 55%),
+            radial-gradient(ellipse 80% 50% at 100% 50%, var(--hero-glow-2), transparent 50%),
+            radial-gradient(ellipse 60% 40% at 0% 80%, var(--hero-glow-3), transparent 45%)
+          `,
+        }}
+        aria-hidden
+      />
+
+
+----- FIND (lines 58-61) ------------------------------------------------------
+            <h1 className="text-primary text-balance font-semibold leading-[1.12] text-3xl min-[380px]:text-4xl sm:leading-[1.08] sm:text-5xl md:text-6xl lg:text-7xl px-0.5 sm:px-0">
+              Turn your photos into art{' '}
+              <span className="text-accent">without writing prompts.</span>
+            </h1>
+
+----- REPLACE WITH ------------------------------------------------------------
+            <h1 className="text-primary text-balance font-semibold leading-[1.12] text-3xl min-[380px]:text-4xl sm:leading-[1.08] sm:text-5xl md:text-6xl lg:text-7xl px-0.5 sm:px-0">
+              Turn your photos into art{' '}
+              <span className="text-accent boxed-word">without writing prompts.</span>
+            </h1>
+
+================================================================================
+
+That's it. Two small edits. The component file is otherwise unchanged.
+
+OUTPUT BEHAVIOR:
+- Navy (no .theme-cream wrapper, e.g. via direct import elsewhere):
+    "without writing prompts." renders as orange text-accent (current look)
+- Cream (wrapped in MarketingLayout / .theme-cream):
+    "without writing prompts." renders as a chunky terracotta box with a
+    cocoa border, white text, slight -2° rotation, and a 6px hard shadow.
+
+If the rotated box is too playful for your taste, edit the
+`.theme-cream .boxed-word` block in app/app.css to remove `transform: rotate(-2deg)`.
+================================================================================
