@@ -1,0 +1,39 @@
+--- a/app/components/dashboard/app-sidebar.tsx
++++ b/app/components/dashboard/app-sidebar.tsx
+@@ -1,4 +1,4 @@
+-import { LayoutDashboard, History, Settings, ChevronRight } from "lucide-react";
++import { LayoutDashboard, History, Settings, ChevronRight, Wand2 } from "lucide-react";
+ import { Link } from "react-router";
+ import { useQuery } from "convex/react";
+ import { api } from "../../../convex/_generated/api";
+@@ -20,6 +20,12 @@ const data = {
+       url: "/dashboard",
+       icon: LayoutDashboard,
+     },
++    {
++      title: "Style Match",
++      url: "/style-match",
++      icon: Wand2,
++      badge: "New",
++    },
+     {
+       title: "My creations",
+       url: "/dashboard/creations",
+
+# Notes
+# ─────
+# 1. Style Match is exposed as a top-level dashboard nav entry — sits between
+#    Dashboard home and "My creations" so it gets discovered before the
+#    user pivots to history.
+#
+# 2. The `badge: "New"` field is consumed by the existing `<NavMain />`
+#    component. If your `NavMain` doesn't already support badges, either:
+#      a. Add a small terracotta pill renderer to `nav-main.tsx`, or
+#      b. Drop the `badge` field for v1 and add it later.
+#
+# 3. `Wand2` is already in the lucide-react bundle — no new dependency.
+#
+# 4. /style-match deliberately lives OUTSIDE the /dashboard subtree (no
+#    sidebar chrome) so the marketing Navbar wraps it consistently with
+#    /best-ai-art-generator. The sidebar entry just navigates there;
+#    the dashboard layout doesn't host the component.

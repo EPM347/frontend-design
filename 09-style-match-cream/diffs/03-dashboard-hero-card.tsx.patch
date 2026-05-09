@@ -1,0 +1,46 @@
+--- a/app/components/dashboard/hero-make-art-card.tsx
++++ b/app/components/dashboard/hero-make-art-card.tsx
+@@ -- after the existing "Browse styles" Link, inside the CTA row --
+           <Link
+             to="/best-ai-art-generator#styles"
+             prefetch="intent"
+             className="inline-flex items-center gap-2 px-5 py-3.5 font-bold text-sm text-foreground bg-transparent border-[3px] border-foreground"
+             style={{ boxShadow: '4px 4px 0 0 var(--cocoa-900)' }}
+           >
+             <Sparkles className="h-4 w-4" aria-hidden="true" />
+             <span>Browse styles</span>
+           </Link>
++          <Link
++            to="/style-match"
++            prefetch="intent"
++            className="inline-flex items-center gap-2 px-5 py-3.5 font-bold text-sm text-foreground bg-[color:var(--butter-500)] border-[3px] border-foreground relative"
++            style={{ boxShadow: '4px 4px 0 0 var(--cocoa-900)' }}
++          >
++            <Wand2 className="h-4 w-4" aria-hidden="true" />
++            <span>Match a style</span>
++            <span
++              className="absolute -top-2 -right-2 px-1.5 py-0.5 bg-[color:var(--terracotta-500)] text-white border-2 border-foreground text-[9px] tracking-[0.12em] uppercase font-bold"
++              style={{ boxShadow: '2px 2px 0 0 var(--cocoa-900)' }}
++            >
++              New
++            </span>
++          </Link>
+
+@@ -- top of file, lucide imports --
+-import { ArrowUpRight, Sparkles } from 'lucide-react';
++import { ArrowUpRight, Sparkles, Wand2 } from 'lucide-react';
+
+# Notes
+# ─────
+# 1. Surfaces Style Match as a discoverable third CTA on the dashboard
+#    hero, alongside "Upload a photo" and "Browse styles". Uses butter
+#    background + terracotta "New" badge to draw the eye without competing
+#    with the primary terracotta upload button.
+#
+# 2. CTA order intentionally puts Match last so the funnel is preserved:
+#    upload → browse → (then if curious) try the new feature. Reversing
+#    this order would risk distracting first-time users from the core
+#    conversion path.
+#
+# 3. The `Wand2` icon matches the sidebar nav icon from diff #02 so the
+#    feature reads as the same thing in both places.

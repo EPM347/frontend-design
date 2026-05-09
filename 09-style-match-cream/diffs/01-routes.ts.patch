@@ -1,0 +1,33 @@
+--- a/app/routes.ts
++++ b/app/routes.ts
+@@ -- inside the routes() array --
+   route('best-ai-art-generator', 'routes/ai-art-generator.tsx'),
++  route('style-match', 'routes/style-match.tsx'),
+   route('app/upload', 'routes/app.upload.tsx'),
+@@ -- API routes section --
+   route('api/upscale', 'routes/api.upscale.tsx'),
++  route('api/style-match', 'routes/api.style-match.tsx'),
+   route('api/generate-line-art', 'routes/api.generate-line-art.tsx'),
+
+# Notes
+# ─────
+# 1. /style-match is a standalone marketing-themed route. It mounts the new
+#    <StyleMatchPanel /> component from `app/components/style-match`.
+#
+# 2. /api/style-match is the server-side endpoint that this design pack's
+#    `~/utils/style-match-client.ts` posts to. The implementation lives
+#    OUTSIDE this design pack — see the saved Style Match Implementation
+#    Brief for the full server contract:
+#
+#      - multipart/form-data input
+#      - Clerk session auth
+#      - 2-credit deduct-before / refund-on-error
+#      - Gemini 3.1 Flash Image Preview (gemini-3.1-flash-image-preview)
+#      - R2 upload (key: style-match/{userId}/{nanoid}.png)
+#      - Insert into `styleMatchResults` Convex table
+#
+# 3. Free-tier quota gate: Style Match generations should count against
+#    the same `usage.getQuota` daily counter as normal generations
+#    (3/day on free), but each one decrements TWO from the credit
+#    balance for paid users. Verify the cost-per-generation logic in
+#    `convex/quota.ts` before merging.
