@@ -79,6 +79,10 @@ Style Match uses the same chunky neo-brutalist treatment as the Generator pack:
 
 No new tokens, no new spacing scale, no new typography — this pack only consumes what Round 01/02 already define.
 
+### V4 marketing-tier polish
+
+The hero is sized at marketing-tier scale (`clamp(2.5rem, 7vw, 5.25rem)` with `letter-spacing: -0.03em`) to match the V4 published landing, since `/style-match` wraps with the marketing Navbar. The italic accent word ("look") gets the signature **boxed-word** treatment — terracotta pill, 4px cocoa border, 6px offset shadow, slight rotation. Three floating geometric decorations (terracotta circle, sage square, butter triangle) anchor the hero in the neo-brutalist visual language. All decoration is hidden on mobile and on the cooking/complete states so it never competes with the work UI.
+
 ## Validation checklist
 
 ### Page render

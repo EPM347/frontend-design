@@ -196,7 +196,10 @@ export function StyleMatchPanel({
 
   return (
     <div className="px-4 sm:px-8 lg:px-12 py-8 sm:py-10 pb-16">
-      <Hero workflowState={workflowState} />
+      <div className="relative">
+        <FloatingShapes workflowState={workflowState} />
+        <Hero workflowState={workflowState} />
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-5 mt-9">
         {/* LEFT: Upload + ratio + mode + Generate */}
@@ -317,6 +320,14 @@ export function StyleMatchPanel({
 
 /* ───────────────────────── HERO STRIP ───────────────────────── */
 
+/**
+ * Marketing-tier hero typography — matches the V4 published landing's
+ * scale and weight for `/style-match`'s standalone surface. Larger
+ * clamp-style sizes, tighter -0.03em tracking, and a `boxed-word` for
+ * the italic accent. We keep the funnel-style smaller hero on the
+ * cooking/complete states so the work-in-progress UI doesn't compete
+ * with the result panel below.
+ */
 function Hero({ workflowState }: { workflowState: StyleMatchWorkflowState }) {
   if (
     workflowState === 'idle' ||
@@ -324,23 +335,25 @@ function Hero({ workflowState }: { workflowState: StyleMatchWorkflowState }) {
     workflowState === 'error'
   ) {
     return (
-      <div className="text-center max-w-2xl mx-auto">
+      <div className="relative z-10 text-center max-w-2xl mx-auto">
         <span
-          className="inline-block text-[11px] tracking-[0.22em] uppercase font-bold text-[color:var(--terracotta-500)] mb-3.5 bg-[color:var(--butter-500)] border-2 border-foreground px-2.5 py-1"
+          className="inline-block text-[11px] tracking-[0.22em] uppercase font-bold text-[color:var(--terracotta-500)] mb-5 bg-[color:var(--butter-500)] border-2 border-foreground px-2.5 py-1"
           style={{ boxShadow: '3px 3px 0 0 var(--cocoa-900)' }}
         >
           ✦ New · style match · 2 credits
         </span>
-        <h1 className="font-display italic font-medium text-4xl sm:text-5xl md:text-6xl leading-[0.96] tracking-[-0.025em] text-foreground mb-3 max-w-[16ch] mx-auto">
-          See any photo &mdash;{' '}
-          <em
-            className="not-italic font-display italic"
-            style={{ color: 'var(--terracotta-500)' }}
-          >
-            in your favorite look.
-          </em>
+        <h1
+          className="font-display italic font-medium text-foreground mb-4 max-w-[16ch] mx-auto"
+          style={{
+            fontSize: 'clamp(2.5rem, 7vw, 5.25rem)',
+            lineHeight: 0.96,
+            letterSpacing: '-0.03em',
+          }}
+        >
+          See any photo in your favorite{' '}
+          <BoxedWord rotate={-2}>look</BoxedWord>.
         </h1>
-        <p className="text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
           Upload your photo + a style reference. Pick whether you want{' '}
           <strong className="font-display italic font-medium text-foreground">
             just the look
@@ -357,14 +370,21 @@ function Hero({ workflowState }: { workflowState: StyleMatchWorkflowState }) {
 
   if (workflowState === 'queued' || workflowState === 'generating') {
     return (
-      <div className="text-center">
+      <div className="relative z-10 text-center">
         <span
           className="inline-block text-[11px] tracking-[0.22em] uppercase font-bold text-[color:var(--terracotta-500)] mb-3 bg-[color:var(--butter-500)] border-2 border-foreground px-2.5 py-1"
           style={{ boxShadow: '3px 3px 0 0 var(--cocoa-900)' }}
         >
           ✦ Cooking your match
         </span>
-        <h1 className="font-display italic font-medium text-3xl sm:text-4xl leading-[0.96] tracking-[-0.025em] text-foreground">
+        <h1
+          className="font-display italic font-medium text-foreground"
+          style={{
+            fontSize: 'clamp(1.875rem, 4.5vw, 3rem)',
+            lineHeight: 0.96,
+            letterSpacing: '-0.03em',
+          }}
+        >
           Hold tight &mdash;{' '}
           <em
             className="not-italic font-display italic"
@@ -379,14 +399,21 @@ function Hero({ workflowState }: { workflowState: StyleMatchWorkflowState }) {
 
   if (workflowState === 'complete') {
     return (
-      <div className="text-center max-w-xl mx-auto">
+      <div className="relative z-10 text-center max-w-xl mx-auto">
         <span
           className="inline-block text-[11px] tracking-[0.22em] uppercase font-bold text-[color:var(--terracotta-500)] mb-3 bg-[color:var(--butter-500)] border-2 border-foreground px-2.5 py-1"
           style={{ boxShadow: '3px 3px 0 0 var(--cocoa-900)' }}
         >
           ✦ Match · saved to gallery
         </span>
-        <h1 className="font-display italic font-medium text-3xl sm:text-4xl leading-[0.96] tracking-[-0.025em] text-foreground mb-2">
+        <h1
+          className="font-display italic font-medium text-foreground mb-2"
+          style={{
+            fontSize: 'clamp(1.875rem, 4.5vw, 3rem)',
+            lineHeight: 0.96,
+            letterSpacing: '-0.03em',
+          }}
+        >
           Looks like{' '}
           <em
             className="not-italic font-display italic"
@@ -404,4 +431,114 @@ function Hero({ workflowState }: { workflowState: StyleMatchWorkflowState }) {
   }
 
   return null;
+}
+
+/* ───────────────────────── BOXED WORD ───────────────────────── */
+
+/**
+ * The signature highlight treatment from the V4 marketing landing —
+ * an italic word inside a chunky-bordered terracotta pill, rotated and
+ * shadowed. Use sparingly (one per headline at most).
+ */
+function BoxedWord({
+  children,
+  variant = 'terracotta',
+  rotate = -2,
+}: {
+  children: React.ReactNode;
+  variant?: 'terracotta' | 'butter' | 'sage';
+  rotate?: number;
+}) {
+  const palette = {
+    terracotta: { bg: 'var(--terracotta-500)', fg: '#FFFFFF' },
+    butter: { bg: 'var(--butter-500)', fg: 'var(--cocoa-900)' },
+    sage: { bg: 'var(--sage-500)', fg: '#FFFFFF' },
+  }[variant];
+  return (
+    <span
+      className="inline-block font-display italic font-medium align-baseline"
+      style={{
+        background: palette.bg,
+        color: palette.fg,
+        border: '4px solid var(--cocoa-900)',
+        padding: '0.04em 0.18em',
+        margin: '0 0.04em',
+        transform: `rotate(${rotate}deg)`,
+        boxShadow: '6px 6px 0 0 var(--cocoa-900)',
+        fontStyle: 'italic',
+      }}
+    >
+      {children}
+    </span>
+  );
+}
+
+/* ───────────────────────── FLOATING SHAPES ───────────────────────── */
+
+/**
+ * Decorative geometric shapes that anchor the hero in V4's neo-brutalist
+ * marketing-page visual language. Hidden on small viewports and on the
+ * cooking/complete states so they don't fight the work UI.
+ */
+function FloatingShapes({
+  workflowState,
+}: {
+  workflowState: StyleMatchWorkflowState;
+}) {
+  if (workflowState !== 'idle' && workflowState !== 'ready' && workflowState !== 'error') {
+    return null;
+  }
+  return (
+    <div
+      aria-hidden="true"
+      className="absolute inset-0 pointer-events-none overflow-hidden hidden md:block"
+    >
+      {/* Terracotta circle, top-right */}
+      <span
+        className="absolute"
+        style={{
+          top: '8px',
+          right: '6%',
+          width: '76px',
+          height: '76px',
+          borderRadius: '50%',
+          background: 'var(--terracotta-400)',
+          border: '4px solid var(--cocoa-900)',
+          boxShadow: '3px 3px 0 0 var(--cocoa-900)',
+          opacity: 0.85,
+        }}
+      />
+      {/* Sage square, top-left */}
+      <span
+        className="absolute"
+        style={{
+          top: '60px',
+          left: '5%',
+          width: '60px',
+          height: '60px',
+          background: 'var(--sage-300)',
+          border: '4px solid var(--cocoa-900)',
+          boxShadow: '3px 3px 0 0 var(--cocoa-900)',
+          transform: 'rotate(14deg)',
+          opacity: 0.85,
+        }}
+      />
+      {/* Butter triangle, bottom-right (CSS triangle with drop-shadow) */}
+      <span
+        className="absolute"
+        style={{
+          bottom: '4px',
+          right: '12%',
+          width: 0,
+          height: 0,
+          borderLeft: '32px solid transparent',
+          borderRight: '32px solid transparent',
+          borderBottom: '54px solid var(--butter-500)',
+          transform: 'rotate(-12deg)',
+          filter: 'drop-shadow(3px 3px 0 var(--cocoa-900))',
+          opacity: 0.95,
+        }}
+      />
+    </div>
+  );
 }
