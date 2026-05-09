@@ -1,0 +1,32 @@
+--- a/app/routes/dashboard/layout.tsx
++++ b/app/routes/dashboard/layout.tsx
+@@ -42,15 +42,15 @@ export default function DashboardLayout() {
+   const { user } = useLoaderData<typeof loader>();
+
+   return (
+-    <SidebarProvider>
+-      <AppSidebar variant="inset" user={user} />
+-      <SidebarInset>
+-        <div className="min-h-screen w-full bg-background">
+-          <SiteHeader />
+-          <main className="bg-muted/30">
+-            <Outlet />
+-          </main>
+-        </div>
+-      </SidebarInset>
+-    </SidebarProvider>
++    <div className="theme-cream">
++      <SidebarProvider>
++        <AppSidebar variant="inset" user={user} />
++        <SidebarInset>
++          <div className="min-h-screen w-full bg-background">
++            <SiteHeader />
++            <main className="bg-background">
++              <Outlet />
++            </main>
++          </div>
++        </SidebarInset>
++      </SidebarProvider>
++    </div>
+   );
+ }

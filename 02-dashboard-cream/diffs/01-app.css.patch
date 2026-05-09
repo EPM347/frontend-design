@@ -1,0 +1,173 @@
+--- a/app/app.css
++++ b/app/app.css
+@@ -- existing .theme-cream block --
+ .theme-cream {
+   /* ... existing variable overrides from Round 01 ... */
+ }
+
+ /* ─────────────────────────────────────────────────── */
+ /* APPEND THESE BLOCKS to .theme-cream (or just below)  */
+ /* ─────────────────────────────────────────────────── */
+
+ /* ── Sidebar token overrides (extend existing .theme-cream block) ── */
+ .theme-cream {
+   --sidebar:                  var(--cream-100);
+   --sidebar-foreground:       var(--cocoa-900);
+   --sidebar-primary:          var(--terracotta-500);
+   --sidebar-primary-foreground: #FFFFFF;
+   --sidebar-accent:           var(--cream-200);
+   --sidebar-accent-foreground: var(--cocoa-900);
+   --sidebar-border:           var(--cocoa-900);
+   --sidebar-ring:             var(--terracotta-500);
+
+   /* Surface tokens used by main content */
+   --background:               var(--cream-50);
+   --foreground:               var(--cocoa-900);
+   --card:                     #FFFFFF;
+   --card-foreground:          var(--cocoa-900);
+   --muted:                    var(--cream-100);
+   --muted-foreground:         var(--cocoa-700);
+   --border:                   rgba(58, 46, 38, 0.16);
+   --input:                    rgba(58, 46, 38, 0.22);
+   --ring:                     var(--terracotta-500);
+ }
+
+ /* ── Active sidebar item: terracotta + cocoa border + offset shadow ── */
+ .theme-cream [data-slot="sidebar-menu-button"][data-active="true"] {
+   background: var(--terracotta-500);
+   color: #FFFFFF;
+   border: 2px solid var(--cocoa-900);
+   box-shadow: 3px 3px 0 0 var(--cocoa-900);
+   margin-right: 4px;
+ }
+ .theme-cream [data-slot="sidebar-menu-button"][data-active="true"]:hover {
+   background: var(--terracotta-500);
+   color: #FFFFFF;
+ }
+ .theme-cream [data-slot="sidebar-menu-button"]:not([data-active="true"]):hover {
+   background: var(--cream-200);
+ }
+
+ /* ── Neo card: 2.5px cocoa border + hard offset shadow ── */
+ .neo-card {
+   background: #FFFFFF;
+   border: 2.5px solid var(--cocoa-900);
+   box-shadow: 4px 4px 0 0 var(--cocoa-900);
+ }
+ .neo-card-lg {
+   background: #FFFFFF;
+   border: 3.5px solid var(--cocoa-900);
+   box-shadow: 8px 8px 0 0 var(--cocoa-900);
+ }
+ .neo-card-sm {
+   background: #FFFFFF;
+   border: 2px solid var(--cocoa-900);
+   box-shadow: 2px 2px 0 0 var(--cocoa-900);
+ }
+
+ /* ── Neo buttons (used as semantic alternatives to shadcn Button) ── */
+ .neo-btn-primary {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+   padding: 11px 18px;
+   background: var(--terracotta-500);
+   color: #FFFFFF;
+   border: 2.5px solid var(--cocoa-900);
+   font-weight: 700;
+   font-size: 14px;
+   text-decoration: none;
+   box-shadow: 4px 4px 0 0 var(--cocoa-900);
+   transition: transform 0.1s, box-shadow 0.1s;
+   cursor: pointer;
+ }
+ .neo-btn-primary:hover { background: var(--terracotta-600); }
+ .neo-btn-primary:active {
+   transform: translate(4px, 4px);
+   box-shadow: 0 0 0 0 var(--cocoa-900);
+ }
+
+ .neo-btn-ghost {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+   padding: 9px 14px;
+   background: #FFFFFF;
+   color: var(--cocoa-900);
+   border: 2px solid var(--cocoa-900);
+   font-weight: 600;
+   font-size: 13px;
+   text-decoration: none;
+   box-shadow: 2px 2px 0 0 var(--cocoa-900);
+   transition: transform 0.1s, box-shadow 0.1s;
+   cursor: pointer;
+ }
+ .neo-btn-ghost:hover { background: var(--cream-200); }
+ .neo-btn-ghost:active {
+   transform: translate(2px, 2px);
+   box-shadow: 0 0 0 0 var(--cocoa-900);
+ }
+
+ /* ── Boxed-name treatment for greeting + display titles ── */
+ .boxed-name {
+   display: inline-block;
+   background: var(--terracotta-500);
+   color: #FFFFFF;
+   border: 4px solid var(--cocoa-900);
+   padding: 0.04em 0.18em;
+   transform: rotate(-2deg);
+   box-shadow: 6px 6px 0 0 var(--cocoa-900);
+   font-style: normal;
+   margin: 0 0.06em;
+   line-height: 1;
+ }
+ .boxed-num {
+   display: inline-block;
+   background: var(--butter-500);
+   color: var(--cocoa-900);
+   border: 3px solid var(--cocoa-900);
+   box-shadow: 4px 4px 0 0 var(--cocoa-900);
+   padding: 0.04em 0.14em;
+   transform: rotate(-2deg);
+   font-style: normal;
+   margin: 0 0.06em 0 0.04em;
+   line-height: 1;
+ }
+
+ /* ── Quota chip (chunky neo replacement for shadcn Badge) ── */
+ .neo-chip {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+   padding: 7px 14px;
+   border: 2px solid var(--cocoa-900);
+   background: #FFFFFF;
+   font-weight: 700;
+   font-size: 13px;
+   color: var(--cocoa-900);
+   box-shadow: 2px 2px 0 0 var(--cocoa-900);
+   transition: transform 0.1s, box-shadow 0.1s;
+   cursor: pointer;
+ }
+ .neo-chip:hover {
+   transform: translate(-1px, -1px);
+   box-shadow: 3px 3px 0 0 var(--cocoa-900);
+ }
+ .neo-chip-dot {
+   width: 14px;
+   height: 14px;
+   border-radius: 50%;
+   flex-shrink: 0;
+ }
+ .neo-chip-num {
+   font-family: 'DM Mono', ui-monospace, monospace;
+   font-size: 13px;
+   line-height: 1;
+ }
+ .neo-chip-label {
+   font-size: 11px;
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+   color: var(--cocoa-700);
+   font-weight: 600;
+ }
